@@ -1,10 +1,10 @@
-class SingleLinkedList<T: Equatable> {
+public class SingleLinkedList<T: Equatable> {
     
     var headNode: Node<T>?
     var tailNode: Node<T>?
     
     
-    func appendNode(element: T) {
+    public func appendNode(element: T) {
         let node = Node<T>(val: element)
         if headNode == nil {
             headNode = node
@@ -14,7 +14,7 @@ class SingleLinkedList<T: Equatable> {
         tailNode = node
     }
     
-    func fetchAllNodes() {
+    public func fetchAllNodes() {
         var tempNode = headNode
         while tempNode != nil {
             print(tempNode!.value)
@@ -22,7 +22,7 @@ class SingleLinkedList<T: Equatable> {
         }
     }
     
-    func fetchAllElementBYrecursion(node: Node<T>?) {
+    public func fetchAllElementBYrecursion(node: Node<T>?) {
         if tailNode != nil {
             print(node!.value)
         }
@@ -32,7 +32,7 @@ class SingleLinkedList<T: Equatable> {
         return
     }
     
-    func insertNode(val: T, index: Int) {
+    public func insertNode(val: T, index: Int) {
         var count = 0
         var node = headNode
         while node != nil {
@@ -49,7 +49,7 @@ class SingleLinkedList<T: Equatable> {
         }
     }
 
-    func deleteNode(val: T) {
+    public func deleteNode(val: T) {
         var node = headNode
         if headNode?.value == val {
             headNode = node?.nextNode
@@ -64,7 +64,7 @@ class SingleLinkedList<T: Equatable> {
         }
     }
     
-    func popNode() -> T? {
+    public func popNode() -> T? {
         defer {
             headNode = headNode?.nextNode
             if headNode == nil {
@@ -74,7 +74,7 @@ class SingleLinkedList<T: Equatable> {
         return headNode!.value
     }
     
-    func removeLast() -> T? {
+    public func removeLast() -> T? {
         var node = headNode
         if headNode == tailNode {
             headNode = nil

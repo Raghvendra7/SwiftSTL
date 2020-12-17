@@ -1,26 +1,26 @@
-class Queue<T> {
+public class Queue<T> {
     var array: [T] = []
     
     @discardableResult
-    func enqueue(value: T) -> Bool {
+    public func enqueue(value: T) -> Bool {
         array.append(value)
         return true
     }
     
-    func dequeue() -> T? {
+    public func dequeue() -> T? {
         guard array.count > 0 else {
             return nil
         }
         return array.removeFirst()
     }
     
-    func countAll() -> Int {
+    public func countAll() -> Int {
         array.count
     }
-    func first() -> T? {
+    public func first() -> T? {
         return array.first
     }
-    func empty() -> Bool {
+    public func empty() -> Bool {
         return array.count == 0
     }
     
